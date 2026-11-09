@@ -167,6 +167,11 @@ See [all numerical results](results/metrics.csv),
 The corrected 32B GRPO and hybrid runs are pending in this release snapshot.
 A pending result is not a zero or a failed-model accuracy.
 
+The historical profile preserves the original preprocessing choices, including
+deduplication by normalized query and called names; matching keys need not mean
+identical schemas or arguments. Frozen artifacts reproduce those choices, not
+a claim that all source annotations are semantically certified.
+
 Historical xLAM results do not establish generalization to unseen tools:
 the original split contains substantial tool-name overlap. There is one model
 family and one primary training seed per profile. Small score differences are

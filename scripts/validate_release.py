@@ -15,6 +15,9 @@ from preprocess_xlam import reconstruct
 
 
 def main():
+    release=json.loads((ROOT/'RELEASE_MANIFEST.json').read_text())
+    for entry in release['files']:
+        assert hashlib.sha256((ROOT/entry['path']).read_bytes()).hexdigest()==entry['sha256'],entry['path']
     manifest=json.loads((ROOT/'data/manifest.json').read_text())
     for entry in manifest['files']:
         path=ROOT/entry['path'];data=path.read_bytes()

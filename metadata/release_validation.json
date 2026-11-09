@@ -1,0 +1,13 @@
+{
+  "data_files": 31,
+  "verified_evaluations": 46,
+  "historical_normalization": "exact on public redacted snapshot",
+  "split_overlap": 0,
+  "status": "pass",
+  "unit_tests_passed": 4,
+  "tokenizer_cases_verified": 12,
+  "local_restoration_verified_profiles": [
+    "original",
+    "revision_v2"
+  ]
+}
