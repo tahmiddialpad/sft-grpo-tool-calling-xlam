@@ -1,0 +1,367 @@
+{
+  "dataset": "Salesforce/xlam-function-calling-60k",
+  "data_license": "CC-BY-4.0",
+  "files": [
+    {
+      "profile": "upstream",
+      "path": "data/upstream/xlam_train.jsonl.gz",
+      "prepared_path": "xlam_train.jsonl",
+      "uncompressed_sha256": "5888bf8f509934694292c11280e4d220f28c6bdb0cb255e8fdf57e683ab0c8f0",
+      "compressed_sha256": "f0dd8252e8f53a7386c7f998df7047e4ee7508a0ebc7c7c80e8d8b434ff7fef3",
+      "uncompressed_bytes": 94371137,
+      "source_unredacted_sha256": "bb47d9a84d3227c2829f7a6cd8f739beedc9e487d4ec8482779e26fefdf74c5b",
+      "public_redaction": true
+    },
+    {
+      "profile": "original",
+      "path": "data/original/llamafactory/xlam_sftgrpo_sft.json.gz",
+      "prepared_path": "llamafactory/xlam_sftgrpo_sft.json",
+      "uncompressed_sha256": "ab87d8842180f61b102806c969b429e0f9413302cd40a58a99b57ae983ec50f5",
+      "compressed_sha256": "cfc8fb3d5fcf86473e311b1135331a3621275cf359a4e5a3ac5844e9f2fd7bc3",
+      "uncompressed_bytes": 53946231,
+      "source_unredacted_sha256": "109882ab68c5e6e864b5e4a7ab02142a426ad320bc4f4576edc6df8b7e165673",
+      "public_redaction": true
+    },
+    {
+      "profile": "original",
+      "path": "data/original/llamafactory/xlam_test.json.gz",
+      "prepared_path": "llamafactory/xlam_test.json",
+      "uncompressed_sha256": "7292c4a666afc19fd2a13d617a9c22564ae201502e18998e64a330eabe32c68b",
+      "compressed_sha256": "4b1e1659a0d750538b132c96f9baf4061ddfb5c53edc6341ae345f5d261783cc",
+      "uncompressed_bytes": 1920682
+    },
+    {
+      "profile": "original",
+      "path": "data/original/llamafactory/xlam_train.json.gz",
+      "prepared_path": "llamafactory/xlam_train.json",
+      "uncompressed_sha256": "8ebc45dc6c2587fd97847ffba3b90b8d36799fa8afbf4877b44b331b2210e840",
+      "compressed_sha256": "fe3d012bf4a9ed40fa6504286a3766bfca31f284d12f928d1f019d219326f76d",
+      "uncompressed_bytes": 108016657,
+      "source_unredacted_sha256": "4bb1590bef0c58698096de52831eb4eb27b89b8d9ccac9b47ccc850240a045c6",
+      "public_redaction": true
+    },
+    {
+      "profile": "original",
+      "path": "data/original/llamafactory/xlam_val.json.gz",
+      "prepared_path": "llamafactory/xlam_val.json",
+      "uncompressed_sha256": "2446285d4e1c36238f1efc968db791a87e0774ebaa28f9e9e4ae0844870b5ec2",
+      "compressed_sha256": "94711a35f28e80c0089252a552362b52571dcfdfabc0a45e400accb59275fa31",
+      "uncompressed_bytes": 975976
+    },
+    {
+      "profile": "original",
+      "path": "data/original/grpo/xlam_test.jsonl.gz",
+      "prepared_path": "grpo/xlam_test.jsonl",
+      "uncompressed_sha256": "f9aa48c7055bac9006d2ec0236fe2d4ed42bf26f53024830ac8788b370f1e400",
+      "compressed_sha256": "07292601f921a42ef7eb16155fa21ecac8df16002bbda6a76810ba05af542ab9",
+      "uncompressed_bytes": 1516322
+    },
+    {
+      "profile": "original",
+      "path": "data/original/grpo/xlam_train.jsonl.gz",
+      "prepared_path": "grpo/xlam_train.jsonl",
+      "uncompressed_sha256": "6b82db9f61500faddc5d4ec72a7a3da08ccbd0c4c901bdd6c9aa7e60f1e4164e",
+      "compressed_sha256": "b5da4a70e1a9f9ffff0cc4dfc560a1df65eec4aab31972b7e3f48f62c42847df",
+      "uncompressed_bytes": 85269933,
+      "source_unredacted_sha256": "b7815d48327f66628766ee9c78bcfd3508190475738578bb6d019b2e06d944e5",
+      "public_redaction": true
+    },
+    {
+      "profile": "original",
+      "path": "data/original/grpo/xlam_val.jsonl.gz",
+      "prepared_path": "grpo/xlam_val.jsonl",
+      "uncompressed_sha256": "522abb32eb3b77eae8a6623b645adbf1f94eb3fde92efd283db5e1894486f8dc",
+      "compressed_sha256": "da127ac8356e38814add6e36251ff09dccff3db7e7037923449c6a85e81fc0c6",
+      "uncompressed_bytes": 773418
+    },
+    {
+      "profile": "original",
+      "path": "data/original/grpo/verl/xlam_sftgrpo_grpo.parquet.gz",
+      "prepared_path": "grpo/verl/xlam_sftgrpo_grpo.parquet",
+      "uncompressed_sha256": "931acc64ab54d6daa8ff9d2ddeeb754dac6fafbc504d58ff94abf5cbe0447a02",
+      "compressed_sha256": "0ef8b2bc75f7a27c826fc84a9036bff1aea73d60f6bae7d5309f8877533bc108",
+      "uncompressed_bytes": 15663022,
+      "source_unredacted_sha256": "26c72b86beb2ef5a3c0c8db895b2514a7654f3a71822e598b0e61bfe9468b159",
+      "source_parquet_rows_sha256": "841d9f319cd355d1c353f3a42561f5cd8bf3d70d129bd5672242b1592927ba79",
+      "public_redaction": true
+    },
+    {
+      "profile": "original",
+      "path": "data/original/grpo/verl/xlam_train.parquet.gz",
+      "prepared_path": "grpo/verl/xlam_train.parquet",
+      "uncompressed_sha256": "f7de3eacc33c6c33c8549fe3666d093b159924aa629a0971316d77fa1f8673df",
+      "compressed_sha256": "c8b13490efe6fd52f09693555db7ae371f461c200b6800551b90b764e7beb3e3",
+      "uncompressed_bytes": 31282226,
+      "source_unredacted_sha256": "a35ea0b8893eb9e2f36e9952c8ebc2787aae285f4df00f73d69dc406262ca2bd",
+      "source_parquet_rows_sha256": "b316210db17c746c2cb8363d01198c3b95ba0d1463dd66cffe860ff1f134b055",
+      "public_redaction": true
+    },
+    {
+      "profile": "original",
+      "path": "data/original/grpo/verl/xlam_val.parquet.gz",
+      "prepared_path": "grpo/verl/xlam_val.parquet",
+      "uncompressed_sha256": "b771b9501dec83f7a29431160e216b33104769dfee7c5f64376d1ad9aca53b36",
+      "compressed_sha256": "435b8e13cb5ed9191c650a8854686e544d9e86ecf431200831f181dbd091064d",
+      "uncompressed_bytes": 287474
+    },
+    {
+      "profile": "original",
+      "path": "data/original/processed/xlam_test.jsonl.gz",
+      "prepared_path": "processed/xlam_test.jsonl",
+      "uncompressed_sha256": "b07b17192e06bddd2df97cf0d01658e70c5df616e7bbbddca8ad902e724c5af5",
+      "compressed_sha256": "f9a389739878f5a82b53f7e32db0d3466914db9676869677a7e212dcb80661f5",
+      "uncompressed_bytes": 1667806
+    },
+    {
+      "profile": "original",
+      "path": "data/original/processed/xlam_train.jsonl.gz",
+      "prepared_path": "processed/xlam_train.jsonl",
+      "uncompressed_sha256": "5a0d2e2a734339893922ac5b5cfee926c5b34ca4b58311e9d06a42dc8c216fcb",
+      "compressed_sha256": "8c35dee275f105390c45e8e8f69b8fd1892a7fed8e9e609cd26607f2d4c8fa65",
+      "uncompressed_bytes": 93826735,
+      "source_unredacted_sha256": "384ade2906a8cc1373a4173e1ea3d36c55d07e7f567203e90d1e3124a9bc07ff",
+      "public_redaction": true
+    },
+    {
+      "profile": "original",
+      "path": "data/original/processed/xlam_val.jsonl.gz",
+      "prepared_path": "processed/xlam_val.jsonl",
+      "uncompressed_sha256": "a8e16e0dcd6cdb70439a63afc00be0649c148cdab48567ae4332d3705dbdc0e5",
+      "compressed_sha256": "2e8dd6e2dd3fa4745db092e6968f08b472ad8b66ecc1c0ee107747913665c938",
+      "uncompressed_bytes": 849160
+    },
+    {
+      "profile": "original",
+      "path": "data/original/dataset_info.json",
+      "prepared_path": "llamafactory/dataset_info.json",
+      "uncompressed_sha256": "0c51129b20768bb8a01d36cb0020ad306b4584e286cbcb9681e66a853ed46b7e",
+      "compressed_sha256": "0c51129b20768bb8a01d36cb0020ad306b4584e286cbcb9681e66a853ed46b7e",
+      "uncompressed_bytes": 697
+    },
+    {
+      "profile": "revision_v2",
+      "path": "data/revision_v2/llamafactory/xlam_sftgrpo_grpo.json.gz",
+      "prepared_path": "llamafactory/xlam_sftgrpo_grpo.json",
+      "uncompressed_sha256": "ba6b02ff72a6c8a455cd0822b27a6437ad9296fc2b1a134b62fc37675501b12b",
+      "compressed_sha256": "d15803c56c699b6a6b48be47e8e66eaa4ac868d95083060af88237df14ddc6f1",
+      "uncompressed_bytes": 10365101,
+      "source_unredacted_sha256": "f3ab9a7b1376552d939132024936c4ee109b9a42100b49142be25d85eaf2b1a7",
+      "public_redaction": true
+    },
+    {
+      "profile": "revision_v2",
+      "path": "data/revision_v2/llamafactory/xlam_sftgrpo_sft.json.gz",
+      "prepared_path": "llamafactory/xlam_sftgrpo_sft.json",
+      "uncompressed_sha256": "29e50b595426825b8254d21fdd46cc3db1bfcbf6ee542e053e1b09e8ea387e88",
+      "compressed_sha256": "d8a15bd8dc4edf1864d9d0e7e270d4dd7be22dcac4e8870568f631d5977b830c",
+      "uncompressed_bytes": 10402511,
+      "source_unredacted_sha256": "98b7c68ec251cfe6dde58cbf3843daa1b5bf68f988bf491641c79fc672a1cdee",
+      "public_redaction": true
+    },
+    {
+      "profile": "revision_v2",
+      "path": "data/revision_v2/llamafactory/xlam_test.json.gz",
+      "prepared_path": "llamafactory/xlam_test.json",
+      "uncompressed_sha256": "631ee5ead74e8db101e369a3c95c2d98d0d9bad27e1e66d881b7019a24417b8f",
+      "compressed_sha256": "abc29059f215b54b4d399a232adbc931f4757f57bfcc4b511c6a0df610e2f032",
+      "uncompressed_bytes": 1964953
+    },
+    {
+      "profile": "revision_v2",
+      "path": "data/revision_v2/llamafactory/xlam_train.json.gz",
+      "prepared_path": "llamafactory/xlam_train.json",
+      "uncompressed_sha256": "0e3d3224279afb1889bdfb881197657ec58236222c55b73c4f0026a539588a76",
+      "compressed_sha256": "50c4741f3699d7622f2a1610f00a7f132d9b4f0cb8a2a5e21ecf79dd426145e8",
+      "uncompressed_bytes": 20767611,
+      "source_unredacted_sha256": "f97ebb8b65a73649e198e7117f81e35888fbc6cdff56fa8a6c4ec107eb3eaab3",
+      "public_redaction": true
+    },
+    {
+      "profile": "revision_v2",
+      "path": "data/revision_v2/llamafactory/xlam_val.json.gz",
+      "prepared_path": "llamafactory/xlam_val.json",
+      "uncompressed_sha256": "82b0e2927548ddd484cbb34d45272ea9a7ed27d72b8b101a187f6852a1fc4e50",
+      "compressed_sha256": "d9b1ce8f7565c45c80306b0dc071918839574ff6a4e5ada8c7f97b68eabd6604",
+      "uncompressed_bytes": 977247
+    },
+    {
+      "profile": "revision_v2",
+      "path": "data/revision_v2/grpo/xlam_sftgrpo_grpo.jsonl.gz",
+      "prepared_path": "grpo/xlam_sftgrpo_grpo.jsonl",
+      "uncompressed_sha256": "6c4809bffee7248ff6c111d53ef61e0ad10c741926435ad0dda70dba29bcdcb4",
+      "compressed_sha256": "10048a06f1ff6836555d8adffe2217e5486540df284e391df2a50c46c8c7d70d",
+      "uncompressed_bytes": 9456584,
+      "source_unredacted_sha256": "aadc0fac75df87d6e4b71fcca9a26a58922601ebbce4e58f094e26dacc02f98b",
+      "public_redaction": true
+    },
+    {
+      "profile": "revision_v2",
+      "path": "data/revision_v2/grpo/xlam_sftgrpo_sft.jsonl.gz",
+      "prepared_path": "grpo/xlam_sftgrpo_sft.jsonl",
+      "uncompressed_sha256": "5a8cb2134f6807a76f7ab9e5f18400678131b0dc6eb5994898f37c45ccc67b3c",
+      "compressed_sha256": "22531188fe46323e79b4017403a2103de232edf9fdd3d31decc9c7c5787e8d87",
+      "uncompressed_bytes": 9494386,
+      "source_unredacted_sha256": "6b61ab19d2623827380069609a347f00d6fc171186990c3eaf180c76c17c93f5",
+      "public_redaction": true
+    },
+    {
+      "profile": "revision_v2",
+      "path": "data/revision_v2/grpo/xlam_test.jsonl.gz",
+      "prepared_path": "grpo/xlam_test.jsonl",
+      "uncompressed_sha256": "8e97b12f8426065d6da1d5d154ea34c93ed102401971f4a021309e2c63a36cb6",
+      "compressed_sha256": "18ea2e421b72606dc778ef3057011b55827ae54a4bc565909691ecdce93eca98",
+      "uncompressed_bytes": 1791050
+    },
+    {
+      "profile": "revision_v2",
+      "path": "data/revision_v2/grpo/xlam_train.jsonl.gz",
+      "prepared_path": "grpo/xlam_train.jsonl",
+      "uncompressed_sha256": "d71b2365a601dcc291c35d8fc75feda322491dd954eedae54557de0f1f547664",
+      "compressed_sha256": "66d68c762c30ee36054db883688dd4b2934715483a4f8f28a97ac0288295c1e1",
+      "uncompressed_bytes": 18950970,
+      "source_unredacted_sha256": "4888ebe0bc2719e025a10e5e5425488d7d455b979509940f8aa5157c519855eb",
+      "public_redaction": true
+    },
+    {
+      "profile": "revision_v2",
+      "path": "data/revision_v2/grpo/xlam_val.jsonl.gz",
+      "prepared_path": "grpo/xlam_val.jsonl",
+      "uncompressed_sha256": "ee47c7d34a64ad7e295fc527455e8d0bf331627ec246e3ac5a733391d0febc54",
+      "compressed_sha256": "ee616dc1cb7f932acf4e53de88ecedf6d4d94f6e0e3ade975994909008ca6905",
+      "uncompressed_bytes": 889663
+    },
+    {
+      "profile": "revision_v2",
+      "path": "data/revision_v2/grpo/verl/xlam_sftgrpo_grpo.parquet.gz",
+      "prepared_path": "grpo/verl/xlam_sftgrpo_grpo.parquet",
+      "uncompressed_sha256": "ad9dd091190c942f3bcde3c9e696a0ef30f50e76c7bd0f9b5bc6519e11c1f8d6",
+      "compressed_sha256": "04eb0bac70c384708bfe74e27e43028b88b3e3a39d7add1513174f1bbaa4f063",
+      "uncompressed_bytes": 2965969,
+      "source_unredacted_sha256": "28dc0a6125f1819156127f01afeef388ba6ca8271f8d375525e13a12dc22b7e8",
+      "source_parquet_rows_sha256": "350170a73d0bc1dc4ccd2824b670b50ebf041aa9688bf3313698dcfa1613d76a",
+      "public_redaction": true
+    },
+    {
+      "profile": "revision_v2",
+      "path": "data/revision_v2/grpo/verl/xlam_sftgrpo_sft.parquet.gz",
+      "prepared_path": "grpo/verl/xlam_sftgrpo_sft.parquet",
+      "uncompressed_sha256": "f1cfc71c4981abd9078b354e5180b1650f11a0cce76133f42cfa0699e914a8ec",
+      "compressed_sha256": "77d37f0895b461e114d488cfd17cede29ca2b48f78c1667faf7d43ff27595741",
+      "uncompressed_bytes": 2952384,
+      "source_unredacted_sha256": "c2afe3fd0c0fc95aab9f6eac2d8e8a0bd29e42139114fd1f4bba8c8972e4f694",
+      "source_parquet_rows_sha256": "23d9a48e8d36ba52af916bc0c7180cbc343bf1e2058f918503f7863c6e489dba",
+      "public_redaction": true
+    },
+    {
+      "profile": "revision_v2",
+      "path": "data/revision_v2/grpo/verl/xlam_test.parquet.gz",
+      "prepared_path": "grpo/verl/xlam_test.parquet",
+      "uncompressed_sha256": "ac778797e84ef42ea74d053c64025e63fd0517e5507ba6d6511ba6bea454ebe9",
+      "compressed_sha256": "509e4b36c338eb948a52e615a60b52940e32f999476addbd58a5f2c879b4147e",
+      "uncompressed_bytes": 560862
+    },
+    {
+      "profile": "revision_v2",
+      "path": "data/revision_v2/grpo/verl/xlam_train.parquet.gz",
+      "prepared_path": "grpo/verl/xlam_train.parquet",
+      "uncompressed_sha256": "c05423bf88aabdd568c37dfeceebc9f28efeb7c91f2f9fe4ddab52672545c8f9",
+      "compressed_sha256": "12c3fbb3409fcc63fb7112249bae65f6d36214da77b24ed487e0ab5751d60938",
+      "uncompressed_bytes": 5936725,
+      "source_unredacted_sha256": "3550734cd18b12ecc0d3b8f4340153ae757002b4706685a2fddcbaf8e7a1ae98",
+      "source_parquet_rows_sha256": "cddf18e77be824797f47d7b188d51e1e0c7522cdbd2575f8ca45549985cef8f6",
+      "public_redaction": true
+    },
+    {
+      "profile": "revision_v2",
+      "path": "data/revision_v2/grpo/verl/xlam_val.parquet.gz",
+      "prepared_path": "grpo/verl/xlam_val.parquet",
+      "uncompressed_sha256": "167749ee576842bef9d7c272b909a99d951af1501e018f6b61e2896a74ed1b62",
+      "compressed_sha256": "ed43126827f59bf2a47b499622fb26fa767f482dd6d359e5d40b610eca3e6952",
+      "uncompressed_bytes": 282234
+    },
+    {
+      "profile": "revision_v2",
+      "path": "data/revision_v2/dataset_info.json",
+      "prepared_path": "llamafactory/dataset_info.json",
+      "uncompressed_sha256": "0c51129b20768bb8a01d36cb0020ad306b4584e286cbcb9681e66a853ed46b7e",
+      "compressed_sha256": "0c51129b20768bb8a01d36cb0020ad306b4584e286cbcb9681e66a853ed46b7e",
+      "uncompressed_bytes": 697
+    }
+  ],
+  "public_redaction": {
+    "placeholder": "[REDACTED_UPSTREAM_CREDENTIAL]",
+    "source_value_sha256": "6b70010961f24eea44c155f490e3bbccfdc02c0a3cb050ef39de7e54b2d599d7",
+    "affected_source_ids": [
+      "xlam-001346",
+      "xlam-001404",
+      "xlam-001722",
+      "xlam-003555",
+      "xlam-003667",
+      "xlam-004805",
+      "xlam-005384",
+      "xlam-005451",
+      "xlam-005479",
+      "xlam-005906",
+      "xlam-007400",
+      "xlam-007735",
+      "xlam-008248",
+      "xlam-009459",
+      "xlam-009663",
+      "xlam-009763",
+      "xlam-011161",
+      "xlam-012142",
+      "xlam-012497",
+      "xlam-014347",
+      "xlam-014592",
+      "xlam-015131",
+      "xlam-015740",
+      "xlam-015877",
+      "xlam-016835",
+      "xlam-017135",
+      "xlam-017461",
+      "xlam-018427",
+      "xlam-020297",
+      "xlam-022387",
+      "xlam-022605",
+      "xlam-023221",
+      "xlam-024353",
+      "xlam-026614",
+      "xlam-028305",
+      "xlam-028869",
+      "xlam-029907",
+      "xlam-030723",
+      "xlam-033435",
+      "xlam-033805",
+      "xlam-034544",
+      "xlam-037685",
+      "xlam-039627",
+      "xlam-039783",
+      "xlam-041901",
+      "xlam-042130",
+      "xlam-043443",
+      "xlam-049203",
+      "xlam-049858",
+      "xlam-054683"
+    ],
+    "reason": "Credential-shaped upstream schema default is not redistributed. Original study artifacts were not modified.",
+    "changed_public_archives": [
+      "data/upstream/xlam_train.jsonl.gz",
+      "data/original/llamafactory/xlam_sftgrpo_sft.json.gz",
+      "data/original/llamafactory/xlam_train.json.gz",
+      "data/original/grpo/xlam_train.jsonl.gz",
+      "data/original/grpo/verl/xlam_sftgrpo_grpo.parquet.gz",
+      "data/original/grpo/verl/xlam_train.parquet.gz",
+      "data/original/processed/xlam_train.jsonl.gz",
+      "data/revision_v2/llamafactory/xlam_sftgrpo_grpo.json.gz",
+      "data/revision_v2/llamafactory/xlam_sftgrpo_sft.json.gz",
+      "data/revision_v2/llamafactory/xlam_train.json.gz",
+      "data/revision_v2/grpo/xlam_sftgrpo_grpo.jsonl.gz",
+      "data/revision_v2/grpo/xlam_sftgrpo_sft.jsonl.gz",
+      "data/revision_v2/grpo/xlam_train.jsonl.gz",
+      "data/revision_v2/grpo/verl/xlam_sftgrpo_grpo.parquet.gz",
+      "data/revision_v2/grpo/verl/xlam_sftgrpo_sft.parquet.gz",
+      "data/revision_v2/grpo/verl/xlam_train.parquet.gz"
+    ],
+    "test_and_prediction_files_changed": false
+  }
+}

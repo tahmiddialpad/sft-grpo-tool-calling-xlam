@@ -1,0 +1,11 @@
+{
+  "column_order": [
+    "id",
+    "query",
+    "answers",
+    "tools"
+  ],
+  "ensure_ascii": false,
+  "newline": "LF",
+  "json_separators": "default"
+}

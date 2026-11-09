@@ -1,0 +1,34 @@
+{
+  "xlam_train": {
+    "file_name": "xlam_train.json",
+    "formatting": "sharegpt",
+    "columns": {
+      "messages": "conversations",
+      "system": "system"
+    }
+  },
+  "xlam_val": {
+    "file_name": "xlam_val.json",
+    "formatting": "sharegpt",
+    "columns": {
+      "messages": "conversations",
+      "system": "system"
+    }
+  },
+  "xlam_test": {
+    "file_name": "xlam_test.json",
+    "formatting": "sharegpt",
+    "columns": {
+      "messages": "conversations",
+      "system": "system"
+    }
+  },
+  "xlam_sftgrpo_sft": {
+    "file_name": "xlam_sftgrpo_sft.json",
+    "formatting": "sharegpt",
+    "columns": {
+      "messages": "conversations",
+      "system": "system"
+    }
+  }
+}

@@ -1,0 +1,266 @@
+[
+  {
+    "path": "configs/original/llamafactory/0_6b_sft.yaml",
+    "source_sha256": "03e7697ddacd3351545a30a4009dc5cb509160e0a3c483fb6288fdb46e7bd1f2",
+    "source_gpu_count": 8,
+    "adaptation": "Portable paths; default four GPUs with effective batch 64. Historical epochs and loss masking retained."
+  },
+  {
+    "path": "configs/original/llamafactory/0_6b_sftgrpo_sft.yaml",
+    "source_sha256": "1622e499b2417dd4ff1f55b78f49516a8616087eb314b98ae4ad39f70dcf7c8f",
+    "source_gpu_count": 8,
+    "adaptation": "Portable paths; default four GPUs with effective batch 64. Historical epochs and loss masking retained."
+  },
+  {
+    "path": "configs/original/verl/0_6b_grpo.sh",
+    "source_sha256": "5ea714b678b1069c3e4e23f2a4956fc377659cfe75e2b184ebdc547dd021cfbd",
+    "adaptation": "Portable paths and configurable GPU count; frozen data, learning rates, epochs and rollout counts retained."
+  },
+  {
+    "path": "configs/original/verl/0_6b_sftgrpo_grpo.sh",
+    "source_sha256": "19793c48a8fd3a485d1f0a02bc03270059d6eeca5b046bc61346964304d5c46b",
+    "adaptation": "Portable paths and configurable GPU count; frozen data, learning rates, epochs and rollout counts retained."
+  },
+  {
+    "path": "configs/original/llamafactory/1_7b_sft.yaml",
+    "source_sha256": "037c050b834b4b830da4e1a03f940e26738b11a55b69ae9da18601778cdf4ae3",
+    "source_gpu_count": 8,
+    "adaptation": "Portable paths; default four GPUs with effective batch 64. Historical epochs and loss masking retained."
+  },
+  {
+    "path": "configs/original/llamafactory/1_7b_sftgrpo_sft.yaml",
+    "source_sha256": "62c921686dd8e26ad59514d002b9dd050ea26e626328aae6d3f3967057f9c00e",
+    "source_gpu_count": 8,
+    "adaptation": "Portable paths; default four GPUs with effective batch 64. Historical epochs and loss masking retained."
+  },
+  {
+    "path": "configs/original/verl/1_7b_grpo.sh",
+    "source_sha256": "81d2b035d03bd25cd2b18245a84398cf969e27f2f34e6371c591a9d670acb7e6",
+    "adaptation": "Portable paths and configurable GPU count; frozen data, learning rates, epochs and rollout counts retained."
+  },
+  {
+    "path": "configs/original/verl/1_7b_sftgrpo_grpo.sh",
+    "source_sha256": "0fe6798ebddd2e60261ba16bc6dadf5ae0231e7b8e749d57bc98ecbc9d67235b",
+    "adaptation": "Portable paths and configurable GPU count; frozen data, learning rates, epochs and rollout counts retained."
+  },
+  {
+    "path": "configs/original/llamafactory/4b_sft.yaml",
+    "source_sha256": "b4b1132ebd3ceeead06828f20eec0ef9736db9f2ff1317cf68442a8c6d3e759c",
+    "source_gpu_count": 8,
+    "adaptation": "Portable paths; default four GPUs with effective batch 64. Historical epochs and loss masking retained."
+  },
+  {
+    "path": "configs/original/llamafactory/4b_sftgrpo_sft.yaml",
+    "source_sha256": "ba94540ee1d3fb20aa2e708c09870ce830297a5632744339e6ab0277e5188503",
+    "source_gpu_count": 8,
+    "adaptation": "Portable paths; default four GPUs with effective batch 64. Historical epochs and loss masking retained."
+  },
+  {
+    "path": "configs/original/verl/4b_grpo.sh",
+    "source_sha256": "2db5d79df0b46a150aa74e2926bb86637334d465fec7a0e2a984fd19a2346b1e",
+    "adaptation": "Portable paths and configurable GPU count; frozen data, learning rates, epochs and rollout counts retained."
+  },
+  {
+    "path": "configs/original/verl/4b_sftgrpo_grpo.sh",
+    "source_sha256": "4c76232c233c1cf03c64d5f4384054ff0babf2a5c4d501cb2bac1391b0551da4",
+    "adaptation": "Portable paths and configurable GPU count; frozen data, learning rates, epochs and rollout counts retained."
+  },
+  {
+    "path": "configs/original/llamafactory/8b_sft.yaml",
+    "source_sha256": "4da7c89e473b3ae68680666ce7a1f8eaac54b6c77f8407bdd1d22bbe4f2686a9",
+    "source_gpu_count": 8,
+    "adaptation": "Portable paths; default four GPUs with effective batch 64. Historical epochs and loss masking retained."
+  },
+  {
+    "path": "configs/original/llamafactory/8b_sftgrpo_sft.yaml",
+    "source_sha256": "db0f07754ff277e5b60787606f90752496c55ca4e0b6ad51a37d18ef455987cc",
+    "source_gpu_count": 8,
+    "adaptation": "Portable paths; default four GPUs with effective batch 64. Historical epochs and loss masking retained."
+  },
+  {
+    "path": "configs/original/verl/8b_grpo.sh",
+    "source_sha256": "73c26d325a13be0155bf7ca2a11964f10c0dd352f2c8a744260286bb962a6306",
+    "adaptation": "Portable paths and configurable GPU count; frozen data, learning rates, epochs and rollout counts retained."
+  },
+  {
+    "path": "configs/original/verl/8b_sftgrpo_grpo.sh",
+    "source_sha256": "776ca0f2627a6ccbfd1e3943550de1b4401bedb8895d0aab260a53c5664b593c",
+    "adaptation": "Portable paths and configurable GPU count; frozen data, learning rates, epochs and rollout counts retained."
+  },
+  {
+    "path": "configs/original/llamafactory/14b_sft.yaml",
+    "source_sha256": "61777b9d85450222d95eee1a2b3423d8a8da3b8262ce483c5d390048e1423122",
+    "source_gpu_count": 8,
+    "adaptation": "Portable paths; default four GPUs with effective batch 64. Historical epochs and loss masking retained."
+  },
+  {
+    "path": "configs/original/llamafactory/14b_sftgrpo_sft.yaml",
+    "source_sha256": "d14f80437af6cfe2cb7dea6eade49d7190c3e93d03f716e911a1981f1278f58e",
+    "source_gpu_count": 8,
+    "adaptation": "Portable paths; default four GPUs with effective batch 64. Historical epochs and loss masking retained."
+  },
+  {
+    "path": "configs/original/verl/14b_grpo.sh",
+    "source_sha256": "387f88ae00cee219062bed4b7478f0d36281a57545de0e74c9bd300ad39d617b",
+    "adaptation": "Portable paths and configurable GPU count; frozen data, learning rates, epochs and rollout counts retained."
+  },
+  {
+    "path": "configs/original/verl/14b_sftgrpo_grpo.sh",
+    "source_sha256": "06ac5ba393521c0c8aa056fc1563502a118b684796d0aaf620d3b3ced833579d",
+    "adaptation": "Portable paths and configurable GPU count; frozen data, learning rates, epochs and rollout counts retained."
+  },
+  {
+    "path": "configs/original/llamafactory/32b_sft.yaml",
+    "source_sha256": "cfc67bd6fe32e6677ee156177c6f0ad6dcae5111920333a590cadf6ae1d73274",
+    "source_gpu_count": 8,
+    "adaptation": "Portable paths; default four GPUs with effective batch 64. Historical epochs and loss masking retained."
+  },
+  {
+    "path": "configs/original/llamafactory/32b_sftgrpo_sft.yaml",
+    "source_sha256": "cf7b25f1f6d4f07152e0957957bba4ad850676fca0841b71bcb03a22c4f8c881",
+    "source_gpu_count": 8,
+    "adaptation": "Portable paths; default four GPUs with effective batch 64. Historical epochs and loss masking retained."
+  },
+  {
+    "path": "configs/original/verl/32b_grpo.sh",
+    "source_sha256": "b6988ae8eea2895699ac6524a6c500892b8ce8a9b4fcccae2121eaf9c6358bf0",
+    "adaptation": "Portable paths and configurable GPU count; frozen data, learning rates, epochs and rollout counts retained."
+  },
+  {
+    "path": "configs/original/verl/32b_sftgrpo_grpo.sh",
+    "source_sha256": "d7147a40c10f6c6be994aa96c3e4c519c18e2b2d8681ab108e6bed9804a3a78a",
+    "adaptation": "Portable paths and configurable GPU count; frozen data, learning rates, epochs and rollout counts retained."
+  },
+  {
+    "path": "configs/revision_v2/llamafactory/0_6b_sft.yaml",
+    "source_sha256": "93265136e8a952c6f8f75fd1858f8232f312b1b4dd34bdda307c1f86027b9974",
+    "source_gpu_count": 8,
+    "adaptation": "Portable paths; default four GPUs with effective batch 64. Historical epochs and loss masking retained."
+  },
+  {
+    "path": "configs/revision_v2/llamafactory/0_6b_sftgrpo_sft.yaml",
+    "source_sha256": "e664a8726273c535beee7568e4decf93075b67841cccf3161f8c6390f843e8e7",
+    "source_gpu_count": 8,
+    "adaptation": "Portable paths; default four GPUs with effective batch 64. Historical epochs and loss masking retained."
+  },
+  {
+    "path": "configs/revision_v2/verl/0_6b_grpo.sh",
+    "source_sha256": "5d523c1ccaf5ecfa2f8c9f3c1073602c6692a7e8f66ce1d9a670349989670f7c",
+    "adaptation": "Portable paths and configurable GPU count; frozen data, learning rates, epochs and rollout counts retained."
+  },
+  {
+    "path": "configs/revision_v2/verl/0_6b_sftgrpo_grpo.sh",
+    "source_sha256": "3c6c81d800196cdcd6d9a011252742bef2282e3b85eb4eedd14bb26769a7139a",
+    "adaptation": "Portable paths and configurable GPU count; frozen data, learning rates, epochs and rollout counts retained."
+  },
+  {
+    "path": "configs/revision_v2/llamafactory/1_7b_sft.yaml",
+    "source_sha256": "0b8f0fb89481e4d46b40f0729730acd4c31d43a513ba8a92a59e4f87e9006ed7",
+    "source_gpu_count": 8,
+    "adaptation": "Portable paths; default four GPUs with effective batch 64. Historical epochs and loss masking retained."
+  },
+  {
+    "path": "configs/revision_v2/llamafactory/1_7b_sftgrpo_sft.yaml",
+    "source_sha256": "5d2953df33fcfd74d0d0696dade49a814c702d16af286e2ab66c2eed73565729",
+    "source_gpu_count": 8,
+    "adaptation": "Portable paths; default four GPUs with effective batch 64. Historical epochs and loss masking retained."
+  },
+  {
+    "path": "configs/revision_v2/verl/1_7b_grpo.sh",
+    "source_sha256": "e85e409d147188619e0a00ec2d7168102d9deda9e9745532cc5942292e685325",
+    "adaptation": "Portable paths and configurable GPU count; frozen data, learning rates, epochs and rollout counts retained."
+  },
+  {
+    "path": "configs/revision_v2/verl/1_7b_sftgrpo_grpo.sh",
+    "source_sha256": "116eef4356b72d93e13baa877cdb7663d9572f881c41a7ddef8840c88b0e16ca",
+    "adaptation": "Portable paths and configurable GPU count; frozen data, learning rates, epochs and rollout counts retained."
+  },
+  {
+    "path": "configs/revision_v2/llamafactory/4b_sft.yaml",
+    "source_sha256": "14584c7b300f1c4fd7d7498216bfed75c67b00620e95a979c64b9a174686e065",
+    "source_gpu_count": 4,
+    "adaptation": "Portable paths; default four GPUs with effective batch 64. Historical epochs and loss masking retained."
+  },
+  {
+    "path": "configs/revision_v2/llamafactory/4b_sftgrpo_sft.yaml",
+    "source_sha256": "4c3d8cd753705c336dc869059877d7810c09a64470b8c067f85086afa6ad0575",
+    "source_gpu_count": 4,
+    "adaptation": "Portable paths; default four GPUs with effective batch 64. Historical epochs and loss masking retained."
+  },
+  {
+    "path": "configs/revision_v2/verl/4b_grpo.sh",
+    "source_sha256": "b130e327d6329dacba102525cb7703d6facc88d0f0d7178df6c5560b5f48c250",
+    "adaptation": "Portable paths and configurable GPU count; frozen data, learning rates, epochs and rollout counts retained."
+  },
+  {
+    "path": "configs/revision_v2/verl/4b_sftgrpo_grpo.sh",
+    "source_sha256": "a04b9572ce3cd33ac889c8ec70b8eae03f719d9b524b1c4915a92ea2ad248ed4",
+    "adaptation": "Portable paths and configurable GPU count; frozen data, learning rates, epochs and rollout counts retained."
+  },
+  {
+    "path": "configs/revision_v2/llamafactory/8b_sft.yaml",
+    "source_sha256": "3af89653537bd0308533ca53f28dd95cfd8a3c8fcb378c8f56e9f0ece64577a6",
+    "source_gpu_count": 4,
+    "adaptation": "Portable paths; default four GPUs with effective batch 64. Historical epochs and loss masking retained."
+  },
+  {
+    "path": "configs/revision_v2/llamafactory/8b_sftgrpo_sft.yaml",
+    "source_sha256": "28b5c1e7f6ac961642d486fed279c715c8494f95492f3164031230b89dcae554",
+    "source_gpu_count": 4,
+    "adaptation": "Portable paths; default four GPUs with effective batch 64. Historical epochs and loss masking retained."
+  },
+  {
+    "path": "configs/revision_v2/verl/8b_grpo.sh",
+    "source_sha256": "4ae3aea7bbafff775d903396d0525f74b517497c97fabdefc2cc6bbe6f0b917a",
+    "adaptation": "Portable paths and configurable GPU count; frozen data, learning rates, epochs and rollout counts retained."
+  },
+  {
+    "path": "configs/revision_v2/verl/8b_sftgrpo_grpo.sh",
+    "source_sha256": "c60fa36f5137343a5ba3c1c083c89f766295e251b46d6e6df9462015e20f301f",
+    "adaptation": "Portable paths and configurable GPU count; frozen data, learning rates, epochs and rollout counts retained."
+  },
+  {
+    "path": "configs/revision_v2/llamafactory/14b_sft.yaml",
+    "source_sha256": "1b51e84729d8085a78176f9c6b4f606c462cd80d078a78f6eb98ad581d912fec",
+    "source_gpu_count": 4,
+    "adaptation": "Portable paths; default four GPUs with effective batch 64. Historical epochs and loss masking retained."
+  },
+  {
+    "path": "configs/revision_v2/llamafactory/14b_sftgrpo_sft.yaml",
+    "source_sha256": "0366e2f138964fb8afb2cdf05c469fd32403d39516a2f644a2a5bd91f7e033d8",
+    "source_gpu_count": 4,
+    "adaptation": "Portable paths; default four GPUs with effective batch 64. Historical epochs and loss masking retained."
+  },
+  {
+    "path": "configs/revision_v2/verl/14b_grpo.sh",
+    "source_sha256": "fdb7aa148e2dc8701880966ad7ff698f561cbaefe3ca4fbcd05db40f3fec2293",
+    "adaptation": "Portable paths and configurable GPU count; frozen data, learning rates, epochs and rollout counts retained."
+  },
+  {
+    "path": "configs/revision_v2/verl/14b_sftgrpo_grpo.sh",
+    "source_sha256": "fda090ac9dec5702c32eb64f13210cc81608ba7f24a12511ac1f3ad24c41bcd7",
+    "adaptation": "Portable paths and configurable GPU count; frozen data, learning rates, epochs and rollout counts retained."
+  },
+  {
+    "path": "configs/revision_v2/llamafactory/32b_sft.yaml",
+    "source_sha256": "0eee7daa7f67690a625df5781becbf9fd89a519ebafd11f128cd0cdb9693d2e4",
+    "source_gpu_count": 4,
+    "adaptation": "Portable paths; default four GPUs with effective batch 64. Historical epochs and loss masking retained."
+  },
+  {
+    "path": "configs/revision_v2/llamafactory/32b_sftgrpo_sft.yaml",
+    "source_sha256": "e05e4f1d20094d225d605b07ab8ee146c8a67255b96821982d623a69cc5ec3f4",
+    "source_gpu_count": 4,
+    "adaptation": "Portable paths; default four GPUs with effective batch 64. Historical epochs and loss masking retained."
+  },
+  {
+    "path": "configs/revision_v2/verl/32b_grpo.sh",
+    "source_sha256": "d7f18492852fd9420793b8dd159c2adfcd7bb3135812aeae2f9055b3b7126f1a",
+    "adaptation": "Portable paths and configurable GPU count; frozen data, learning rates, epochs and rollout counts retained."
+  },
+  {
+    "path": "configs/revision_v2/verl/32b_sftgrpo_grpo.sh",
+    "source_sha256": "8c6d8683db0fe2054105b917c8d2ae24823b9ffc8f84eebf7f0ce6d6fc514ebd",
+    "adaptation": "Portable paths and configurable GPU count; frozen data, learning rates, epochs and rollout counts retained."
+  }
+]

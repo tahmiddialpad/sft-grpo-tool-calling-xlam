@@ -1,0 +1,149 @@
+{
+  "note": "Original score reproduction uses the saved parsed calls, not the stored exact score. Available archival raw parser is not a proven exact snapshot for all original runs.",
+  "results": [
+    {
+      "model": "qwen3-0_6b",
+      "method": "zeroshot",
+      "saved_parse_exact_match": 0.66,
+      "archival_raw_reparse_exact_match": 0.639
+    },
+    {
+      "model": "qwen3-1_7b",
+      "method": "zeroshot",
+      "saved_parse_exact_match": 0.681,
+      "archival_raw_reparse_exact_match": 0.641
+    },
+    {
+      "model": "qwen3-4b",
+      "method": "zeroshot",
+      "saved_parse_exact_match": 0.766,
+      "archival_raw_reparse_exact_match": 0.698
+    },
+    {
+      "model": "qwen3-8b",
+      "method": "zeroshot",
+      "saved_parse_exact_match": 0.753,
+      "archival_raw_reparse_exact_match": 0.689
+    },
+    {
+      "model": "qwen3-14b",
+      "method": "zeroshot",
+      "saved_parse_exact_match": 0.778,
+      "archival_raw_reparse_exact_match": 0.726
+    },
+    {
+      "model": "qwen3-32b",
+      "method": "zeroshot",
+      "saved_parse_exact_match": 0.783,
+      "archival_raw_reparse_exact_match": 0.718
+    },
+    {
+      "model": "qwen3-0_6b",
+      "method": "grpo",
+      "saved_parse_exact_match": 0.792,
+      "archival_raw_reparse_exact_match": 0.766
+    },
+    {
+      "model": "qwen3-1_7b",
+      "method": "grpo",
+      "saved_parse_exact_match": 0.814,
+      "archival_raw_reparse_exact_match": 0.8
+    },
+    {
+      "model": "qwen3-4b",
+      "method": "grpo",
+      "saved_parse_exact_match": 0.833,
+      "archival_raw_reparse_exact_match": 0.819
+    },
+    {
+      "model": "qwen3-8b",
+      "method": "sft",
+      "saved_parse_exact_match": 0.877,
+      "archival_raw_reparse_exact_match": 0.877
+    },
+    {
+      "model": "qwen3-8b",
+      "method": "grpo",
+      "saved_parse_exact_match": 0.844,
+      "archival_raw_reparse_exact_match": 0.837
+    },
+    {
+      "model": "qwen3-8b",
+      "method": "sftgrpo",
+      "saved_parse_exact_match": 0.862,
+      "archival_raw_reparse_exact_match": 0.862
+    },
+    {
+      "model": "qwen3-14b",
+      "method": "sft",
+      "saved_parse_exact_match": 0.888,
+      "archival_raw_reparse_exact_match": 0.888
+    },
+    {
+      "model": "qwen3-14b",
+      "method": "grpo",
+      "saved_parse_exact_match": 0.851,
+      "archival_raw_reparse_exact_match": 0.83
+    },
+    {
+      "model": "qwen3-14b",
+      "method": "sftgrpo",
+      "saved_parse_exact_match": 0.862,
+      "archival_raw_reparse_exact_match": 0.862
+    },
+    {
+      "model": "qwen3-32b",
+      "method": "sft",
+      "saved_parse_exact_match": 0.887,
+      "archival_raw_reparse_exact_match": 0.887
+    },
+    {
+      "model": "qwen3-32b",
+      "method": "grpo",
+      "saved_parse_exact_match": 0.858,
+      "archival_raw_reparse_exact_match": 0.843
+    },
+    {
+      "model": "qwen3-32b",
+      "method": "sftgrpo",
+      "saved_parse_exact_match": 0.86,
+      "archival_raw_reparse_exact_match": 0.86
+    },
+    {
+      "model": "qwen3-0_6b",
+      "method": "sft",
+      "saved_parse_exact_match": 0.856,
+      "archival_raw_reparse_exact_match": 0.856
+    },
+    {
+      "model": "qwen3-1_7b",
+      "method": "sft",
+      "saved_parse_exact_match": 0.872,
+      "archival_raw_reparse_exact_match": 0.872
+    },
+    {
+      "model": "qwen3-4b",
+      "method": "sft",
+      "saved_parse_exact_match": 0.88,
+      "archival_raw_reparse_exact_match": 0.88
+    },
+    {
+      "model": "qwen3-0_6b",
+      "method": "sftgrpo",
+      "saved_parse_exact_match": 0.811,
+      "archival_raw_reparse_exact_match": 0.811
+    },
+    {
+      "model": "qwen3-1_7b",
+      "method": "sftgrpo",
+      "saved_parse_exact_match": 0.826,
+      "archival_raw_reparse_exact_match": 0.826
+    },
+    {
+      "model": "qwen3-4b",
+      "method": "sftgrpo",
+      "saved_parse_exact_match": 0.842,
+      "archival_raw_reparse_exact_match": 0.842
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+cff-version: 1.2.0
+message: "Please cite the associated paper and APIGen when using these xLAM artifacts."
+title: "SFT vs GRPO for Tool Calling: xLAM Artifacts"
+type: software
+authors:
+  - name: "tahmiddialpad"
+repository-code: "https://github.com/tahmiddialpad/sft-grpo-tool-calling-xlam"
+license: Apache-2.0

@@ -1,0 +1,10 @@
+This artifact release contains xLAM-only study scripts developed in a
+LLaMA-Factory-based research workspace. Framework dependencies are not vendored.
+Existing notices in copied source files remain applicable.
+
+LLaMA-Factory: https://github.com/hiyouga/LLaMA-Factory (Apache-2.0).
+verl: https://github.com/volcengine/verl (Apache-2.0).
+vLLM: https://github.com/vllm-project/vllm (Apache-2.0).
+
+Dataset attribution and its separate CC BY 4.0 license are in DATA_LICENSE.md
+and the preserved upstream dataset card. Model weights are not bundled.
