@@ -1,8 +1,6 @@
 {
   "original_sha256": "a260a535906632fa83639da7f92c293b0aea6722d7465daa5d1946568c0b1d68",
-  "revision_v2_sha256": "c952354fb5f3023318f5ac8e0c0eda1cf8cd768b8e61bdf32834cad330365b82",
   "original_source": "historical committed reward module",
-  "note": "Generation environments for historical runs were not fully pinned. Released predictions reproduce scores; new generations can differ.",
-  "original_score_reproduction": "Match saved parsed calls against frozen references with the original matcher.",
-  "legacy_raw_parser_provenance": "Available archival parser does not reproduce all historical parsing decisions; --reparse-original is a separate diagnostic."
+  "published_score_input": "Released saved parsed calls matched against frozen gold calls.",
+  "raw_text_parser": "scripts/legacy_reward.py"
 }

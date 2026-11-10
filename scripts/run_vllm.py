@@ -118,25 +118,18 @@ def main():
     ap.add_argument("--limit", type=int, default=0, help="cap examples per test set")
     ap.add_argument("--out", default=os.path.join(ROOT, "results", "eval"))
     ap.add_argument("--data-dir", help="Versioned GRPO dataset directory")
-    ap.add_argument("--chat-template", help="Frozen canonical chat template used by corrected runs")
+    ap.add_argument("--chat-template", help="Optional explicit tokenizer chat template")
     ap.add_argument("--base-revision", help="Immutable base-model commit used for this experiment")
     ap.add_argument("--run-name", default=None,
                      help="output subdir name; defaults to basename(lora or model), which "
                           "is wrong for zero-shot rows (bare HF id like 'Qwen/Qwen3-8B' -> "
                           "'Qwen3-8B', not matching the caller's run_name) — always pass "
                           "this explicitly from run_all_evals.sh")
-    ap.add_argument("--profile", required=True, choices=("original","revision_v2"))
+    ap.add_argument("--profile", default="original", choices=("original",))
     ap.add_argument("--thinking", required=True, choices=("enabled","disabled"))
     ap.add_argument("--seed", type=int, default=20261103)
     args = ap.parse_args()
-    if args.profile=="revision_v2" and args.thinking!="disabled":
-        ap.error("The corrected protocol requires thinking disabled")
-    args.data_dir=args.data_dir or os.path.join(ROOT,"datasets",args.profile,"grpo")
-    if args.profile=="revision_v2" and not args.chat_template:
-        args.chat_template=os.path.join(ROOT,"metadata","revision_chat_template.jinja")
-    if args.model.startswith("Qwen/") and not args.base_revision:
-        with open(os.path.join(ROOT,"metadata","model_revisions.json")) as stream:
-            args.base_revision=json.load(stream)[args.model]
+    args.data_dir=args.data_dir or os.path.join(ROOT,"datasets","original","grpo")
     if args.gpu_ids:
         ids=list(map(int,args.gpu_ids.split(',')))
         if len(ids)!=args.gpus or len(set(ids))!=len(ids) or min(ids)<0:

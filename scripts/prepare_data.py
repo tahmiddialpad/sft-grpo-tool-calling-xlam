@@ -32,6 +32,6 @@ def prepare(profile,out=None):
 
 if __name__=='__main__':
     parser=argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--profile',required=True,choices=('original','revision_v2'))
+    parser.add_argument('--profile',default='original',choices=('original',))
     parser.add_argument('--out',type=Path)
     args=parser.parse_args();prepare(args.profile,args.out)

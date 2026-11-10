@@ -61,16 +61,7 @@
     "data/original/grpo/xlam_train.jsonl.gz",
     "data/original/grpo/verl/xlam_sftgrpo_grpo.parquet.gz",
     "data/original/grpo/verl/xlam_train.parquet.gz",
-    "data/original/processed/xlam_train.jsonl.gz",
-    "data/revision_v2/llamafactory/xlam_sftgrpo_grpo.json.gz",
-    "data/revision_v2/llamafactory/xlam_sftgrpo_sft.json.gz",
-    "data/revision_v2/llamafactory/xlam_train.json.gz",
-    "data/revision_v2/grpo/xlam_sftgrpo_grpo.jsonl.gz",
-    "data/revision_v2/grpo/xlam_sftgrpo_sft.jsonl.gz",
-    "data/revision_v2/grpo/xlam_train.jsonl.gz",
-    "data/revision_v2/grpo/verl/xlam_sftgrpo_grpo.parquet.gz",
-    "data/revision_v2/grpo/verl/xlam_sftgrpo_sft.parquet.gz",
-    "data/revision_v2/grpo/verl/xlam_train.parquet.gz"
+    "data/original/processed/xlam_train.jsonl.gz"
   ],
   "test_and_prediction_files_changed": false
 }

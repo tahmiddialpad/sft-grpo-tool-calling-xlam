@@ -25,7 +25,7 @@ def main():
         payload=gzip.decompress(data) if path.suffix=='.gz' else data
         assert hashlib.sha256(payload).hexdigest()==entry['uncompressed_sha256'],path
         assert len(payload)==entry['uncompressed_bytes'],path
-    expected={'original':{'train':56438,'val':500,'test':1000},'revision_v2':{'train':10752,'val':500,'test':1000}}
+    expected={'original':{'train':56438,'val':500,'test':1000}}
     for profile,counts in expected.items():
         ids={}
         for split,n in counts.items():
@@ -35,12 +35,6 @@ def main():
             assert len(ids[split])==n and all(r['id'].startswith('xlam-') and r['gold_calls'] for r in rows)
             assert all(r.get('source','xlam')=='xlam' for r in rows)
         assert not ids['train']&ids['test'] and not ids['train']&ids['val'] and not ids['test']&ids['val']
-        if profile=='revision_v2':
-            a=read(ROOT/'data/revision_v2/grpo/xlam_sftgrpo_sft.jsonl.gz')
-            b=read(ROOT/'data/revision_v2/grpo/xlam_sftgrpo_grpo.jsonl.gz')
-            assert len(a)==len(b)==5376
-            assert not {r['id'] for r in a}&{r['id'] for r in b}
-            assert {r['id'] for r in a+b}==ids['train']
     rebuilt=reconstruct(ROOT/'data/upstream/xlam_train.jsonl.gz')
     for split,rows in rebuilt.items():
         frozen=read(ROOT/'data/original/processed'/f'xlam_{split}.jsonl.gz')

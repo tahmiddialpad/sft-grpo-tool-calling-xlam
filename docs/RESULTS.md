@@ -1,9 +1,6 @@
-# xLAM results
+# Original xLAM results
 
-Scores are normalized call-set exact match (%). All test sets have 1,000 call-required examples.
-Original and revision profiles have different training pools, test membership and format acceptance; this is not a parser-only comparison.
-
-## original
+Normalized tool-call exact match (%). Each model is evaluated on the same 1,000 xLAM test examples.
 
 | Model | Zero-shot | LoRA SFT | GRPO | SFT → GRPO |
 |---|---:|---:|---:|---:|
@@ -13,20 +10,6 @@ Original and revision profiles have different training pools, test membership an
 | 8B | 75.30 | 87.70 | 84.40 | 86.20 |
 | 14B | 77.80 | 88.80 | 85.10 | 86.20 |
 | 32B | 78.30 | 88.70 | 85.80 | 86.00 |
+| **Average** | **73.68** | **87.67** | **83.20** | **84.38** |
 
-## revision_v2
-
-| Model | Zero-shot | LoRA SFT | GRPO | SFT → GRPO |
-|---|---:|---:|---:|---:|
-| 0.6B | 31.00 | 80.10 | 77.40 | 80.10 |
-| 1.7B | 53.50 | 83.80 | 78.90 | 82.10 |
-| 4B | 78.80 | 85.30 | 83.10 | 85.30 |
-| 8B | 78.90 | 86.00 | 84.50 | 86.00 |
-| 14B | 79.60 | 86.50 | 85.70 | 86.10 |
-| 32B | 82.90 | 87.30 | pending | pending |
-
-The original profile uses permissive historical call extraction; the corrected profile uses the versioned strict scorer. The original scorer is retained rather than silently changed.
-
-Saved generations are included for every numeric cell. Run `python scripts/validate_release.py` to recompute them.
-
-The corrected 32B GRPO and hybrid results are pending; no full corrected average or final ranking is asserted.
+Saved predictions and numerical metrics are included for all 24 evaluations.

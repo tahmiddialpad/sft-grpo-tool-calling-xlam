@@ -12,7 +12,7 @@ ROOT=Path(__file__).resolve().parents[1]
 
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--profile',required=True,choices=('original','revision_v2'))
+    parser.add_argument('--profile',default='original',choices=('original',))
     parser.add_argument('--scale',required=True,choices=('0_6b','1_7b','4b','8b','14b','32b'))
     parser.add_argument('--stage',choices=('sft','sftgrpo_sft'),default='sft')
     parser.add_argument('--gpu-ids',default='0,1,2,3')

@@ -22,7 +22,7 @@ def rows_digest(rows):
 
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--profile',required=True,choices=('original','revision_v2'))
+    parser.add_argument('--profile',default='original',choices=('original',))
     parser.add_argument('--upstream-jsonl',required=True,type=Path)
     parser.add_argument('--prepared-dir',type=Path)
     args=parser.parse_args();manifest=json.loads((ROOT/'data/manifest.json').read_text())

@@ -3,8 +3,7 @@
 
 Uses the original normalized-query-plus-called-names deduplication and seed 42.
 Frozen training exports additionally remove the five released training IDs.
-The corrected profile has separate frozen membership; do not replace it with
-these historical splits.
+
 """
 import argparse
 import gzip

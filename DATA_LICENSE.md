@@ -12,8 +12,8 @@ The included xLAM source snapshot and derived data are adapted from
 - Preserved attribution and citation: `data/upstream/README.md`.
 
 Modifications include JSONL normalization, historical deduplication, frozen
-train/validation/test splits, explicit training exclusions, revised subset
-selection, export to SFT/GRPO formats, and redaction of one credential-shaped
+train/validation/test splits, explicit training exclusions, export to SFT/GRPO
+formats, and redaction of one credential-shaped
 upstream tool-schema default from the public training copies. The original
 study files were not modified; test and prediction files are unchanged.
 SHA256 hashes identify the exact

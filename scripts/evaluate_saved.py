@@ -5,11 +5,11 @@ import gzip
 import json
 from pathlib import Path
 import sys
+from collections import Counter
 
 ROOT=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT/'scripts'))
 import legacy_reward
-import grpo_reward
 
 
 def read(path):
@@ -18,13 +18,13 @@ def read(path):
 
 
 def score(text,gold,profile):
-    if profile=='original':
-        calls=legacy_reward.parse_calls(text)
-        name,arg,exact=legacy_reward.score_calls(calls,gold) if calls is not None else (0.0,0.0,False)
-        return dict(exact=int(exact),name=name,arg=arg,parsed=int(calls is not None),pred=calls,
-                    valid=int(calls is not None),status='calls' if calls is not None else 'invalid',
-                    literal_exact=int(calls is not None and grpo_reward.literal_exact(calls,gold)))
-    return grpo_reward.evaluate_output(text,gold)
+    if profile!='original':raise ValueError('This release contains only the original xLAM protocol')
+    calls=legacy_reward.parse_calls(text)
+    name,arg,exact=legacy_reward.score_calls(calls,gold) if calls is not None else (0.0,0.0,False)
+    literal=lambda values:Counter(json.dumps(v,sort_keys=True,ensure_ascii=False) for v in values)
+    return dict(exact=int(exact),name=name,arg=arg,parsed=int(calls is not None),pred=calls,
+                valid=int(calls is not None),status='calls' if calls is not None else 'invalid',
+                literal_exact=int(calls is not None and literal(calls)==literal(gold)))
 
 
 def evaluate(predictions,references,profile,reparse_original=False):
@@ -46,7 +46,7 @@ def evaluate(predictions,references,profile,reparse_original=False):
 
 if __name__=='__main__':
     parser=argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--profile',required=True,choices=('original','revision_v2'))
+    parser.add_argument('--profile',default='original',choices=('original',))
     parser.add_argument('--predictions',required=True,type=Path)
     parser.add_argument('--references',type=Path)
     parser.add_argument('--reparse-original',action='store_true',help='Use the available archival raw parser instead of the authoritative saved historical parse')

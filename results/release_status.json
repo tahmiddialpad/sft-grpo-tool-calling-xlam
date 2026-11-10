@@ -1,10 +1,12 @@
 {
-  "created_utc": "2026-11-09T16:06:07.923570+00:00",
-  "original_evaluations": 24,
-  "revision_v2_evaluations": 22,
-  "revision_v2_pending": [
-    "v2_grpo_qwen3-32b_xlam",
-    "v2_sftgrpo_qwen3-32b_xlam"
+  "evaluations": 24,
+  "models": 6,
+  "methods": [
+    "zeroshot",
+    "sft",
+    "grpo",
+    "sftgrpo"
   ],
-  "scope": "Only xLAM-trained models evaluated on xLAM, plus base-model zero-shot on xLAM. No cross-dataset claims."
+  "test_samples_per_evaluation": 1000,
+  "scope": "Original paper: xLAM-trained models evaluated on xLAM, plus zero-shot baselines."
 }

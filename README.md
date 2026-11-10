@@ -1,188 +1,119 @@
-# SFT vs GRPO for Tool Calling — xLAM Artifacts
+# SFT vs GRPO for Tool Calling — xLAM
 
-xLAM-only code, frozen data, configurations, saved generations, and results for
-**“SFT or RL for Tool-Calling LLM Agents? A Controlled Study Across Data, Method, and Scale.”**
+Original-paper code, data, training configurations, saved predictions, and
+results for the xLAM experiments in **“SFT or RL for Tool-Calling LLM Agents?
+A Controlled Study Across Data, Method, and Scale.”**
 
-This repository releases the xLAM component of the study. It contains only
-xLAM-trained models evaluated on xLAM and instruction-model zero-shot evaluation
-on xLAM. Other datasets, mixed-source training, private infrastructure, and
-model checkpoint weights are not included.
+The release covers six Qwen3 scales (0.6B, 1.7B, 4B, 8B, 14B, 32B), LoRA SFT,
+GRPO, SFT followed by GRPO, and zero-shot baselines: **24 evaluations**.
 
-## Two explicitly separate profiles
+## Data
 
-| Profile | Training decisions | Validation | Test | Purpose |
-|---|---:|---:|---:|---|
-| `original` | 56,438 | 500 | 1,000 | Original-paper artifacts and permissive call extraction |
-| `revision_v2` | 10,752 | 500 | 1,000 | Frozen revised data and stricter, versioned output scoring |
+| Split | Samples |
+|---|---:|
+| Training | 56,438 |
+| Validation | 500 |
+| Test | 1,000 |
 
-The profiles have different splits and budgets. They are not a parser-only
-ablation. Never combine a profile's results with the other profile's references.
-Both test sets contain calls in every reference: this release does not measure
-no-call accuracy or free-form answer quality. Scores are custom normalized
-call-set exact match, not an official benchmark leaderboard score.
+Every test example requires a tool call. Each method uses the same test set.
+The hybrid uses disjoint training halves of 28,219 examples each.
 
-The data archives are included directly, so reproducing saved-output scores does
-not require a dataset account, GPU, API key, or model download.
+Compressed data archives are included in `data/`. Checksums and membership are
+recorded in `data/manifest.json`. Public training copies redact one
+credential-shaped upstream schema default; test references and saved predictions
+are unchanged. The restoration command below reconstructs the study training
+inputs locally from the upstream snapshot.
 
-## Reproduce every released score on CPU
+## Verify the results
+
+No GPU, model download, or dataset account is needed for saved-output scoring.
 
 ```bash
 python -m unittest discover -s tests
 python scripts/validate_release.py
-```
-
-The validator checks archive checksums, split membership, disjoint revised
-hybrid halves, reconstruction of the historical normalized splits from raw
-xLAM, and every released evaluation against its own reference file.
-
-To rescore one original result:
-
-```bash
-python scripts/evaluate_saved.py --profile original \
+python scripts/evaluate_saved.py \
   --predictions results/original/predictions/zeroshot_qwen3-0_6b.jsonl.gz
 ```
 
-Original score reproduction uses the released saved parsed calls and original
-matcher, rather than copying the stored exact-score field. The available
-archival raw parser does not reproduce all saved historical parsing decisions;
-it is not asserted to be the exact parser used for every original run. Use
-`--reparse-original` to measure that separate reconstruction explicitly.
-The archival parser permits recovering call content from incomplete wrappers.
-The revised scorer rejects malformed explicit wrappers and duplicate JSON keys,
-and uses revised matching. Code for both is released separately. Neither
-protocol executes a generated tool call.
+Saved-output evaluation matches the released parsed predictions against the
+gold tool calls; it recomputes scores rather than copying stored score fields.
+Use `--reparse-original` to extract calls from raw text with the included parser.
+The scorer reports normalized tool-call exact match, tool-name score, argument
+score, and parse rate. String argument values are case-insensitive and numeric
+strings are normalized.
 
-## Prepare training data
+## Prepare training inputs
 
 ```bash
-python scripts/prepare_data.py --profile original
-# Or, in a separate experiment:
-python scripts/prepare_data.py --profile revision_v2
-```
-
-Files are expanded into `datasets/<profile>/`. Public exports preserve study
-membership but redact one credential-shaped upstream schema default occurring
-in 50 raw source rows. No test or saved-prediction file was changed.
-`data/manifest.json` records hashes of public files and original unredacted
-training inputs; `metadata/public_data_redaction.json` documents the change.
-
-For exact training-input reproduction, obtain the upstream dataset under its
-access terms and restore the value **locally**, without displaying or testing it:
-
-```bash
+python scripts/prepare_data.py
+# For the exact study training inputs:
 pip install huggingface_hub pyarrow
 python scripts/download_upstream.py
-python scripts/restore_training_inputs.py --profile original \
+python scripts/restore_training_inputs.py \
   --upstream-jsonl outputs/upstream/xlam_train.jsonl
-# For corrected training, restore --profile revision_v2 instead.
 ```
 
-The download command requires upstream access through your own Hugging Face
-account. You can instead supply an existing JSONL snapshot with the recorded
-hash. Restoration verifies original bytes for JSON/JSONL and original table
-content for parquet. Restored files remain in Git-ignored directories.
-Training launchers require restoration, or an explicit `--allow-redacted-data`
-choice for a new experiment using the public sanitized prompts. They do not
-silently call sanitized training inputs an exact reproduction.
+The upstream download uses your Hugging Face access. An existing JSONL snapshot
+with the recorded hash can also be supplied. Restored files stay in ignored
+`datasets/` and `outputs/` directories. For a new experiment using the public
+redacted prompts, pass `--allow-redacted-data` to the training launcher.
 
-To reconstruct the historical normalized splits directly from the raw archive:
+The raw-data preprocessing is also included:
 
 ```bash
 python scripts/preprocess_xlam.py
 ```
 
-Historical normalization retained 57,943 of 60,000 source rows, split into
-56,443 training, 500 validation and 1,000 test dialogs. Five additional training
-IDs were excluded before the 56,438-example training exports. Their IDs are
-released in `metadata/original_training_exclusions.json`.
-Revised membership is frozen in `metadata/revision_v2_data.json`; its selection
-originated in the broader revision and is not regenerated by the historical
-split command.
+It applies the original normalized-query/called-name deduplication and seed-42
+split. Five training exclusions are recorded in
+`metadata/original_training_exclusions.json`.
 
-## Training and new inference
+## Train
 
-Use separate environments for LLaMA-Factory SFT and verl/vLLM. See
-[the environment notes](docs/ENVIRONMENTS.md). Existing saved outputs provide
-exact score reproduction; exact regeneration of historical outputs is not
-guaranteed because their runtime identities were not completely recorded.
-
-LoRA SFT (default four GPUs, effective batch 64):
+Install LLaMA-Factory for SFT, and use a separate verl/vLLM environment for GRPO
+and inference. See [environment setup](docs/ENVIRONMENTS.md).
+Launchers default to four GPUs; SFT preserves effective batch size 64.
 
 ```bash
-python scripts/train_sft.py --profile original --scale 0_6b \
-  --stage sft --gpu-ids 0,1,2,3
-```
+# LoRA SFT
+python scripts/train_sft.py --scale 0_6b --stage sft --gpu-ids 0,1,2,3
 
-Pure GRPO:
+# GRPO
+python scripts/train_grpo.py --scale 0_6b --stage grpo --gpu-ids 0,1,2,3
 
-```bash
-python scripts/train_grpo.py --profile original --scale 0_6b \
-  --stage grpo --gpu-ids 0,1,2,3
-```
-
-Hybrid training has a disjoint SFT half and GRPO half:
-
-```bash
-python scripts/train_sft.py --profile original --scale 0_6b \
-  --stage sftgrpo_sft --gpu-ids 0,1,2,3
+# SFT -> GRPO
+python scripts/train_sft.py --scale 0_6b --stage sftgrpo_sft --gpu-ids 0,1,2,3
 python scripts/merge_lora_checkpoint.py \
   --adapter-dir outputs/original/0_6b_sftgrpo_sft \
   --base-model Qwen/Qwen3-0.6B --out-dir outputs/original/0_6b_warm_merged
-python scripts/train_grpo.py --profile original --scale 0_6b \
-  --stage sftgrpo_grpo --model outputs/original/0_6b_warm_merged \
-  --gpu-ids 0,1,2,3
+python scripts/train_grpo.py --scale 0_6b --stage sftgrpo_grpo \
+  --model outputs/original/0_6b_warm_merged --gpu-ids 0,1,2,3
 ```
 
-For `revision_v2`, use that profile consistently in each command. The revised
-GRPO launcher resolves the pinned base commit and checks the frozen tokenizer.
-For revised hybrid merges, supply a pinned base snapshot path; see
-`metadata/model_revisions.json`.
+LoRA uses rank 32, alpha 64 and dropout 0.05. Pure SFT uses two epochs. The
+hybrid warm-up uses one epoch; its GRPO stage uses two epochs on the other half.
+GRPO uses eight rollouts per prompt and the released reward function.
 
-The original hybrid warm-up uses one epoch on 28,219 examples; its GRPO stage
-uses two epochs on the other 28,219 examples. The revised hybrid uses two
-epochs per 5,376-example half. These are distinct recipes; the original arm is
-not equalized to the revised input budget. GRPO updates the policy, while SFT
-uses LoRA. Rollout count, trainable parameters and compute are not matched.
-
-New vLLM evaluation, with explicit thinking behavior:
+## Inference and evaluation
 
 ```bash
-python scripts/run_vllm.py --profile revision_v2 \
-  --model Qwen/Qwen3-0.6B --thinking disabled \
-  --gpus 4 --gpu-ids 0,1,2,3 --run-name new_zero_shot \
-  --out outputs/eval
+python scripts/run_vllm.py --model Qwen/Qwen3-0.6B --thinking enabled \
+  --gpus 4 --gpu-ids 0,1,2,3 --run-name zero_shot --out outputs/eval
 ```
 
-Add `--lora <adapter-directory>` for SFT or point `--model` at a merged GRPO
-checkpoint. For 32B evaluation use `--tp 2` or another compatible GPU layout.
-The original profile requires an explicit `--thinking enabled` or
-`--thinking disabled` choice; its historical thinking settings cannot be fully
-reconstructed from the saved metrics alone.
+Use `--lora <adapter-directory>` for an SFT adapter or `--model <checkpoint>`
+for a merged model. Thinking mode, tensor parallelism and model revision are
+explicit command-line options.
 
 ## Results
 
-See [all numerical results](results/metrics.csv),
-[the readable tables](docs/RESULTS.md), and
-[release coverage](results/release_status.json).
-The corrected 32B GRPO and hybrid runs are pending in this release snapshot.
-A pending result is not a zero or a failed-model accuracy.
+See [the original results](docs/RESULTS.md), [numerical metrics](results/metrics.csv),
+and [saved predictions](results/original/predictions). All 24 evaluations use
+1,000 test samples each.
 
-The historical profile preserves the original preprocessing choices, including
-deduplication by normalized query and called names; matching keys need not mean
-identical schemas or arguments. Frozen artifacts reproduce those choices, not
-a claim that all source annotations are semantically certified.
+## Licensing
 
-Historical xLAM results do not establish generalization to unseen tools:
-the original split contains substantial tool-name overlap. There is one model
-family and one primary training seed per profile. Small score differences are
-point estimates, not claims of statistical significance.
-
-## Licensing and attribution
-
-Code: [Apache-2.0](LICENSE).
-Data and derived data artifacts: [CC BY 4.0](DATA_LICENSE.md), adapted from
-[Salesforce's APIGen/xLAM dataset](https://huggingface.co/datasets/Salesforce/xlam-function-calling-60k).
-The [upstream dataset card](data/upstream/README.md) includes the APIGen citation.
-The upstream release retains its own access process; this repository attributes
-and redistributes the included snapshot under its stated license.
-Base-model weights are obtained separately under their upstream licenses.
+Code: [Apache-2.0](LICENSE). Data: [CC BY 4.0](DATA_LICENSE.md), adapted from
+[Salesforce APIGen/xLAM](https://huggingface.co/datasets/Salesforce/xlam-function-calling-60k).
+The [upstream dataset card](data/upstream/README.md) contains attribution and
+the APIGen citation. Base-model weights are obtained separately.
